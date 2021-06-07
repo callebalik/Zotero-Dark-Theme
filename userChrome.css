@@ -1,19 +1,39 @@
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-* {border: 0 !important; }
+* {
+    border: 0 !important;
+}
 
 /*change background color and text color of zotero toolbar and menubar*/
-#zotero-tb, #zotero-toolbar, #navigator-toolbox { background: #323234 !important;
-color: #FFFFFF !important; }
-#zotero-toolbar {border-bottom: 1px solid #1d1d1d !important;}
+#zotero-tb,
+#zotero-toolbar,
+#navigator-toolbox {
+    background: #323234 !important;
+    color: #ffffff !important;
+}
+#zotero-toolbar {
+    border-bottom: 1px solid #1d1d1d !important;
+}
 /*change color of menu items to white*/
-#navigator-toolbox menu { color: white !important }
+#navigator-toolbox menu {
+    color: white !important;
+}
 
 /*change color of menu items in drop down menus back to black*/
-#manage-attachments-menu label, #developer-menu label, #layout-menu label, #note-font-size-menu label, #font-size-menu label, #debug-output-menu label, #new-item label { color: black !important; }
+#manage-attachments-menu label,
+#developer-menu label,
+#layout-menu label,
+#note-font-size-menu label,
+#font-size-menu label,
+#debug-output-menu label,
+#new-item label {
+    color: black !important;
+}
 
 /*Fixed New Item in File drop-down showing in white*/
-#navigator-toolbox menu:first-child { color: unset !important; }
+#navigator-toolbox menu:first-child {
+    color: unset !important;
+}
 
 /*Don't know what it does */
 /*#zotero-splitter{ background: red !important;
@@ -21,170 +41,246 @@ color: red !important; }
 */
 
 /*Change color of tags*/
-#zotero-pane { background: #323234 !important;
-color: black !important; }
+#zotero-pane {
+    background: #323234 !important;
+    color: black !important;
+}
 .zotero-tb-button[type="menu"] {
-  background: red !important;
+    background: red !important;
 }
 
 /*change background and color of collections and items panes*/
-treechildren{ background: #323234 !important;
-color: #FFFFFF !important; }
+treechildren {
+    background: #323234 !important;
+    color: #ffffff !important;
+}
 
 /*increase spacing between rows in collections and items and add a border to separate panes*/
 /*#zotero-collections-tree { border-right: 1px solid #1d1d1d !important; }*/
-#zotero-collections-tree treechildren::-moz-tree-row { height: 30px !important; }
+#zotero-collections-tree treechildren::-moz-tree-row {
+    height: 30px !important;
+}
 
 /*change background and color of collections when hovering*/
-#zotero-collections-tree treechildren::-moz-tree-row(hover) { background: #7E7E7E !important;
-color: #FFFFFF !important; border: 0 !important; }
+#zotero-collections-tree treechildren::-moz-tree-row(hover) {
+    background: #7e7e7e !important;
+    color: #ffffff !important;
+    border: 0 !important;
+}
 
 /*change color of selected item in Collections pane (My library or folders) */
-#zotero-collections-tree treechildren::-moz-tree-cell(selected) { background: #474749 !important; border: 0 !important;
-border-bottom: 1px solid #1d1d1d !important; }
+#zotero-collections-tree treechildren::-moz-tree-cell(selected) {
+    background: #474749 !important;
+    border: 0 !important;
+    border-bottom: 1px solid #1d1d1d !important;
+}
 
-#zotero-collections-tree treechildren::-moz-tree-cell-text(selected) { color: #FFFFFF !important; }
+#zotero-collections-tree treechildren::-moz-tree-cell-text(selected) {
+    color: #ffffff !important;
+}
 
 /*increase spacing between rows in collections and items*/
-#zotero-items-tree treechildren::-moz-tree-row { height: 30px !important; }
-#zotero-items-tree { border-right: 1px solid #1d1d1d !important;
-border-bottom: 1px solid #1d1d1d !important;
-background-color: black !important}
+#zotero-items-tree treechildren::-moz-tree-row {
+    height: 30px !important;
+}
+#zotero-items-tree {
+    border-right: 1px solid #1d1d1d !important;
+    border-bottom: 1px solid #1d1d1d !important;
+    background-color: black !important;
+}
 
 /*change background and color of items when hovering*/
-#zotero-items-tree treechildren::-moz-tree-row(hover) { background: #7E7E7E !important;
-color: #FFFFFF !important; border: 0 !important; }
+#zotero-items-tree treechildren::-moz-tree-row(hover) {
+    background: #7e7e7e !important;
+    color: #ffffff !important;
+    border: 0 !important;
+}
 
 /*change background and color of items when selecting*/
-#zotero-items-tree treechildren::-moz-tree-row(selected) { background: #474749 !important;
-color: #FFFFFF !important; border: 0 !important;
-border-bottom: 1px solid #1d1d1d !important; }
-#zotero-items-tree treechildren::-moz-tree-cell-text(selected) { color: #FFFFFF !important; border: 0 !important; }
+#zotero-items-tree treechildren::-moz-tree-row(selected) {
+    background: #474749 !important;
+    color: #ffffff !important;
+    border: 0 !important;
+    border-bottom: 1px solid #1d1d1d !important;
+}
+#zotero-items-tree treechildren::-moz-tree-cell-text(selected) {
+    color: #ffffff !important;
+    border: 0 !important;
+}
 
 /*change background and color of columns field selector*/
-#zotero-items-tree treecol { -moz-appearance: none !important;
-  background: #474749 !important;
-color: #FFFFFF !important;
-border-bottom: 1px solid #1d1d1d !important;
-border-right: 1px solid #1d1d1d !important; }
+#zotero-items-tree treecol {
+    -moz-appearance: none !important;
+    background: #474749 !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #1d1d1d !important;
+    border-right: 1px solid #1d1d1d !important;
+}
 
-.treecol-image { -moz-appearance: none !important;
-  background: #474749 !important;
-color: #FFFFFF !important;
-border-bottom: 1px solid #1d1d1d !important; }
+.treecol-image {
+    -moz-appearance: none !important;
+    background: #474749 !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #1d1d1d !important;
+}
 
 /*Change color of fields in item pane (clicky items) when hovering */
-#zotero-item-pane-content .zotero-clicky:hover
-{	color: black !important;
-  border-radius: 0px !important;
+#zotero-item-pane-content .zotero-clicky:hover {
+    color: black !important;
+    border-radius: 0px !important;
 }
 
 /*Correct Minus and plus clicky buttons */
-#zotero-item-pane-content .zotero-clicky-minus:hover { color: transparent !important; }
-#zotero-item-pane-content .zotero-clicky-plus:hover { color: transparent !important; }
+#zotero-item-pane-content .zotero-clicky-minus:hover {
+    color: transparent !important;
+}
+#zotero-item-pane-content .zotero-clicky-plus:hover {
+    color: transparent !important;
+}
 
 /*tabs in Preferences dialog - well more like all the tabs except the ones I'll specify later*/
-tabpanel { color: black !important;
-background: #7E7E7E !important; }
+tabpanel {
+    color: black !important;
+    background: #7e7e7e !important;
+}
 
-tab[selected="true"]{ color: black !important;
-background: white !important; }
+tab[selected="true"] {
+    color: black !important;
+    background: white !important;
+}
 
-tab{ -moz-appearance: none !important;
-color: #eee !important;
-background: #474749 !important;
-border-top: 0px solid black !important;
-border-left: 0px solid black !important;
-border-right: 1px solid #1d1d1d !important;
-border-radius: 0px !important;
-border-bottom-left-radius: 0px !important;
-border-bottom-right-radius: 0px !important; }
+tab {
+    -moz-appearance: none !important;
+    color: #eee !important;
+    background: #474749 !important;
+    border-top: 0px solid black !important;
+    border-left: 0px solid black !important;
+    border-right: 1px solid #1d1d1d !important;
+    border-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
 
-tab:hover{ color: black !important;
-background: #E0E8F6 !important;
-box-shadow: inset 0px 0px 0px !important;
-border-radius: 0px 0px 0 0 !important; }
+tab:hover {
+    color: black !important;
+    background: #e0e8f6 !important;
+    box-shadow: inset 0px 0px 0px !important;
+    border-radius: 0px 0px 0 0 !important;
+}
 
 /*change items in item pane besides tabs*/
-#zotero-duplicates-merge-pane > groupbox > .groupbox-body { background: #323234 !important;
-  color: #FFFFFF !important;
-  border: 0 !important; }
+#zotero-duplicates-merge-pane > groupbox > .groupbox-body {
+    background: #323234 !important;
+    color: #ffffff !important;
+    border: 0 !important;
+}
 
 /*#zotero-item-pane-content > groupbox { border: 0 !important; background: #323234 !important;
 color: #FFFFFF !important; }*/
 
-#zotero-item-pane-content > groupbox > .groupbox-body { border: 0 !important; background: #323234 !important;
-color: #FFFFFF !important; }
+#zotero-item-pane-content > groupbox > .groupbox-body {
+    border: 0 !important;
+    background: #323234 !important;
+    color: #ffffff !important;
+}
 
 /*change color of retraction details background*/
-#retraction-details { background: #7f0000 !important; }
+#retraction-details {
+    background: #7f0000 !important;
+}
 
 /*tabs in Item pane*/
-#zotero-item-pane-content tabpanel { background: #474749 !important;
-color: #FFFFFF !important; }
+#zotero-item-pane-content tabpanel {
+    background: #474749 !important;
+    color: #ffffff !important;
+}
 
 /*fixed color in drop-down tags in tabpanel: see https://css-tricks.com/solved-with-css-dropdown-menus/*/
-#tags-box-container ul li ul { color: black !important; }
+#tags-box-container ul li ul {
+    color: black !important;
+}
 
-#zotero-item-pane-content tab[selected="true"]{ background: #474749 !important;
-border-top: 3px solid #0a84ff !important;}
+#zotero-item-pane-content tab[selected="true"] {
+    background: #474749 !important;
+    border-top: 3px solid #0a84ff !important;
+}
 
-#zotero-item-pane-content tab{ -moz-appearance: none !important;
-color: #eee !important;
-background: #323234 !important;
-border-top: 0px solid #0a84ff !important;
-border-left: 0px solid rgba(127,127,127,0.2) !important;
-border-right: 1px solid #1d1d1d !important;
-border-radius: 0px !important;
-border-bottom-left-radius: 0px !important;
-border-bottom-right-radius: 0px !important; }
+#zotero-item-pane-content tab {
+    -moz-appearance: none !important;
+    color: #eee !important;
+    background: #323234 !important;
+    border-top: 0px solid #0a84ff !important;
+    border-left: 0px solid rgba(127, 127, 127, 0.2) !important;
+    border-right: 1px solid #1d1d1d !important;
+    border-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
 
-#zotero-item-pane-content tab:hover{ color: #FFFFFF !important;
-background: #7E7E7E !important;
-box-shadow: inset 0px 0px 0px !important;
-border-radius: 0px 0px 0 0 !important; }
+#zotero-item-pane-content tab:hover {
+    color: #ffffff !important;
+    background: #7e7e7e !important;
+    box-shadow: inset 0px 0px 0px !important;
+    border-radius: 0px 0px 0 0 !important;
+}
 
 /*define color of item type field*/
-#item-type-menu
-{
-	-moz-appearance: none;
-	color: white !important;
-	height: 1.5em !important;
-	min-height: 1.5em !important;
-	padding: 0 0 0 2px !important;
-	margin: 1px 5px 0 1px !important;
-	max-height: 1.5em !important;
-	border: 1px solid transparent;
-	background-color: transparent;
+#item-type-menu {
+    -moz-appearance: none;
+    color: white !important;
+    height: 1.5em !important;
+    min-height: 1.5em !important;
+    padding: 0 0 0 2px !important;
+    margin: 1px 5px 0 1px !important;
+    max-height: 1.5em !important;
+    border: 1px solid transparent;
+    background-color: transparent;
 }
 /*define color of date-field-status*/
-#zotero-date-field-status
-{
-	color: #ffffff !important;
-	padding: 0 10px 0 1px !important;
+#zotero-date-field-status {
+    color: #ffffff !important;
+    padding: 0 10px 0 1px !important;
 }
 
 /*preferences dialog*/
-#zotero-prefpane-general, #zotero-prefpane-sync, #zotero-prefpane-export, #zotero-prefpane-advanced-keys-tab, #wordProcessors, #zotero-quickCopy-format, #sync-reset-form { color: black !important;
-background: #7E7E7E !important; }
-#zotero-prefpane-general title { background: #474749 !important;
-color: #FFFFFF !important; }
+#zotero-prefpane-general,
+#zotero-prefpane-sync,
+#zotero-prefpane-export,
+#zotero-prefpane-advanced-keys-tab,
+#wordProcessors,
+#zotero-quickCopy-format,
+#sync-reset-form {
+    color: black !important;
+    background: #7e7e7e !important;
+}
+#zotero-prefpane-general title {
+    background: #474749 !important;
+    color: #ffffff !important;
+}
 
-prefwindow { color: black !important;
-background: #7E7E7E !important; }
+prefwindow {
+    color: black !important;
+    background: #7e7e7e !important;
+}
 
-prefwindow .chromeclass-toolbar { color: #FFFFFF !important;
-background: #323234 !important; }
+prefwindow .chromeclass-toolbar {
+    color: #ffffff !important;
+    background: #323234 !important;
+}
 
 /*about dialog*/
-#aboutcontent
-{	background: #474749 !important;
-  color: white !important;
-	padding: 10px; }
+#aboutcontent {
+    background: #474749 !important;
+    color: white !important;
+    padding: 10px;
+}
 
-#version
-{	color: white !important; }
+#version {
+    color: white !important;
+}
 
 /*advanced search dialog*/
-#zotero-advanced-search-dialog #zotero-search-box-controls {	color: black !important;
-background: #7E7E7E !important; }
+#zotero-advanced-search-dialog #zotero-search-box-controls {
+    color: black !important;
+    background: #7e7e7e !important;
+}
