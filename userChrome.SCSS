@@ -1,0 +1,327 @@
+@function color($color, $tone) {
+    @if map-has-key($palettes, $color) {
+        $color: map-get($palettes, $color);
+
+        @if map-has-key($color, $tone) {
+            $tone: map-get($color, $tone);
+            @return $tone;
+        }
+
+        @warn "unknown tone `#{$tone}` in color";
+        @return null;
+    }
+
+    @warn "unknown color `#{$color}` in palette";
+    @return null;
+}
+
+$palettes: (
+    blue: (
+        darker: hsl(201, 61%, 34%),
+        dark: hsl(198, 57%, 39%),
+        base: hsl(196, 59%, 42%),
+        light: hsl(194, 56%, 51%),
+        lighter: hsl(192, 61%, 53%),
+    ),
+    red: (
+        base: hsl(0, 100%, 58%),
+    ),
+    yellow: (
+        base: #ffa949,
+        light: #ffa949,
+    ),
+    base: (
+        base: #ffffff,
+    ),
+);
+
+$background-base: color(blue, base);
+$background-light: color(blue, base);
+$background-medium: color(blue, base);
+$color-base: color(base, base);
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/
+* {
+    border: 0 !important;
+}
+
+/*change background color and text color of zotero toolbar and menubar*/
+#zotero-tb,
+#zotero-toolbar,
+#navigator-toolbox {
+    background: $background-base !important;
+    color: $color-base !important;
+}
+#zotero-toolbar {
+    border-bottom: 1px solid #1d1d1d !important;
+}
+/*change color of menu items to white*/
+#navigator-toolbox menu {
+    color: $color-base !important;
+}
+
+/*change color of menu items in drop down menus back to black*/
+#manage-attachments-menu label,
+#developer-menu label,
+#layout-menu label,
+#note-font-size-menu label,
+#font-size-menu label,
+#debug-output-menu label,
+#new-item label {
+    color: black !important;
+}
+
+/*Fixed New Item in File drop-down showing in white*/
+#navigator-toolbox menu:first-child {
+    color: unset !important;
+}
+
+/*Don't know what it does */
+/*#zotero-splitter{ background: red !important;
+color: red !important; }
+*/
+
+/*Change color of tags*/
+#zotero-pane {
+    background: $background-base !important;
+    color: black !important;
+}
+.zotero-tb-button[type="menu"] {
+    background: red !important;
+}
+
+/*change background and color of collections and items panes*/
+treechildren {
+    background: $background-base !important;
+    color: $color-base !important;
+}
+
+/*increase spacing between rows in collections and items and add a border to separate panes*/
+/*#zotero-collections-tree { border-right: 1px solid #1d1d1d !important; }*/
+#zotero-collections-tree treechildren::-moz-tree-row {
+    height: 30px !important;
+}
+
+/*change background and color of collections when hovering*/
+#zotero-collections-tree treechildren::-moz-tree-row(hover) {
+    background: $background-medium !important;
+    color: $color-base !important;
+    border: 0 !important;
+}
+
+/*change color of selected item in Collections pane (My library or folders) */
+#zotero-collections-tree treechildren::-moz-tree-cell(selected) {
+    background: $background-light !important;
+    border: 0 !important;
+    border-bottom: 1px solid #1d1d1d !important;
+}
+
+#zotero-collections-tree treechildren::-moz-tree-cell-text(selected) {
+    color: $color-base !important;
+}
+
+/*increase spacing between rows in collections and items*/
+#zotero-items-tree treechildren::-moz-tree-row {
+    height: 30px !important;
+}
+#zotero-items-tree {
+    border-right: 1px solid #1d1d1d !important;
+    border-bottom: 1px solid #1d1d1d !important;
+    background-color: black !important;
+}
+
+/*change background and color of items when hovering*/
+#zotero-items-tree treechildren::-moz-tree-row(hover) {
+    background: $background-medium !important;
+    color: $color-base !important;
+    border: 0 !important;
+}
+
+/*change background and color of items when selecting*/
+#zotero-items-tree treechildren::-moz-tree-row(selected) {
+    background: $background-light !important;
+    color: $color-base !important;
+    border: 0 !important;
+    border-bottom: 1px solid #1d1d1d !important;
+}
+#zotero-items-tree treechildren::-moz-tree-cell-text(selected) {
+    color: $color-base !important;
+    border: 0 !important;
+}
+
+/*change background and color of columns field selector*/
+#zotero-items-tree treecol {
+    -moz-appearance: none !important;
+    background: $background-light !important;
+    color: $color-base !important;
+    border-bottom: 1px solid #1d1d1d !important;
+    border-right: 1px solid #1d1d1d !important;
+}
+
+.treecol-image {
+    -moz-appearance: none !important;
+    background: $background-light !important;
+    color: $color-base !important;
+    border-bottom: 1px solid #1d1d1d !important;
+}
+
+/*Change color of fields in item pane (clicky items) when hovering */
+#zotero-item-pane-content .zotero-clicky:hover {
+    color: black !important;
+    border-radius: 0px !important;
+}
+
+/*Correct Minus and plus clicky buttons */
+#zotero-item-pane-content .zotero-clicky-minus:hover {
+    color: transparent !important;
+}
+#zotero-item-pane-content .zotero-clicky-plus:hover {
+    color: transparent !important;
+}
+
+/*tabs in Preferences dialog - well more like all the tabs except the ones I'll specify later*/
+tabpanel {
+    color: black !important;
+    background: $background-medium !important;
+}
+
+tab[selected="true"] {
+    color: black !important;
+    background: white !important;
+}
+
+tab {
+    -moz-appearance: none !important;
+    color: #eee !important;
+    background: $background-light !important;
+    border-top: 0px solid black !important;
+    border-left: 0px solid black !important;
+    border-right: 1px solid #1d1d1d !important;
+    border-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+tab:hover {
+    color: black !important;
+    background: #e0e8f6 !important;
+    box-shadow: inset 0px 0px 0px !important;
+    border-radius: 0px 0px 0 0 !important;
+}
+
+/*change items in item pane besides tabs*/
+#zotero-duplicates-merge-pane > groupbox > .groupbox-body {
+    background: $background-base !important;
+    color: $color-base !important;
+    border: 0 !important;
+}
+
+/*#zotero-item-pane-content > groupbox { border: 0 !important; background: $background-base !important;
+color: $color-base !important; }*/
+
+#zotero-item-pane-content > groupbox > .groupbox-body {
+    border: 0 !important;
+    background: $background-base !important;
+    color: $color-base !important;
+}
+
+/*change color of retraction details background*/
+#retraction-details {
+    background: #7f0000 !important;
+}
+
+/*tabs in Item pane*/
+#zotero-item-pane-content tabpanel {
+    background: $background-light !important;
+    color: $color-base !important;
+}
+
+/*fixed color in drop-down tags in tabpanel: see https://css-tricks.com/solved-with-css-dropdown-menus/*/
+#tags-box-container ul li ul {
+    color: black !important;
+}
+
+#zotero-item-pane-content tab[selected="true"] {
+    background: $background-light !important;
+    border-top: 3px solid #0a84ff !important;
+}
+
+#zotero-item-pane-content tab {
+    -moz-appearance: none !important;
+    color: #eee !important;
+    background: $background-base !important;
+    border-top: 0px solid #0a84ff !important;
+    border-left: 0px solid rgba(127, 127, 127, 0.2) !important;
+    border-right: 1px solid #1d1d1d !important;
+    border-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+#zotero-item-pane-content tab:hover {
+    color: $color-base !important;
+    background: $background-medium !important;
+    box-shadow: inset 0px 0px 0px !important;
+    border-radius: 0px 0px 0 0 !important;
+}
+
+/*define color of item type field*/
+#item-type-menu {
+    -moz-appearance: none;
+    color: $color-base !important;
+    height: 1.5em !important;
+    min-height: 1.5em !important;
+    padding: 0 0 0 2px !important;
+    margin: 1px 5px 0 1px !important;
+    max-height: 1.5em !important;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+/*define color of date-field-status*/
+#zotero-date-field-status {
+    color: $color-base !important;
+    padding: 0 10px 0 1px !important;
+}
+
+/*preferences dialog*/
+#zotero-prefpane-general,
+#zotero-prefpane-sync,
+#zotero-prefpane-export,
+#zotero-prefpane-advanced-keys-tab,
+#wordProcessors,
+#zotero-quickCopy-format,
+#sync-reset-form {
+    color: black !important;
+    background: $background-medium !important;
+}
+#zotero-prefpane-general title {
+    background: $background-light !important;
+    color: $color-base !important;
+}
+
+prefwindow {
+    color: black !important;
+    background: $background-medium !important;
+}
+
+prefwindow .chromeclass-toolbar {
+    color: $color-base !important;
+    background: $background-base !important;
+}
+
+/*about dialog*/
+#aboutcontent {
+    background: $background-light !important;
+    color: $color-base !important;
+    padding: 10px;
+}
+
+#version {
+    color: $color-base !important;
+}
+
+/*advanced search dialog*/
+#zotero-advanced-search-dialog #zotero-search-box-controls {
+    color: black !important;
+    background: $background-medium !important;
+}
