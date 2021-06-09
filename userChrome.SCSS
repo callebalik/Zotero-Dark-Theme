@@ -31,14 +31,26 @@ $palettes: (
         light: #ffa949,
     ),
     base: (
-        base: #ffffff,
+        base: #131313,
+        light: #f1f1f1,
+        accent: hsl(302, 12%, 51%),
+    ),
+    background: (
+        base: hsl(15, 3%, 73%),
+        light: hsl(20, 64%, 88%),
+        lighter: hsla(194, 100%, 87%, 0.877),
+        dark: hsl(214, 32%, 14%),
+        dark-light: hsl(214, 32%, 30%),
+        dark-lighter: hsl(214, 32%, 14%),
     ),
 );
 
-$background-base: color(blue, base);
-$background-light: color(blue, base);
-$background-medium: color(blue, base);
+$background-base: color(background, base);
+$background-light: color(background, light);
+$background-lighter: color(background, lighter);
+$background-medium: color(background, dark-light);
 $color-base: color(base, base);
+$color-accent: color(base, accent);
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/
 * {
@@ -68,12 +80,14 @@ $color-base: color(base, base);
 #font-size-menu label,
 #debug-output-menu label,
 #new-item label {
-    color: black !important;
+    color: $color-base !important;
+    background-color: $background-medium;
 }
 
 /*Fixed New Item in File drop-down showing in white*/
 #navigator-toolbox menu:first-child {
     color: unset !important;
+    background-color: $background-light;
 }
 
 /*Don't know what it does */
@@ -83,8 +97,8 @@ color: red !important; }
 
 /*Change color of tags*/
 #zotero-pane {
-    background: $background-base !important;
-    color: black !important;
+    background-color: $background-base !important;
+    color: $color-base;
 }
 .zotero-tb-button[type="menu"] {
     background: red !important;
@@ -92,7 +106,7 @@ color: red !important; }
 
 /*change background and color of collections and items panes*/
 treechildren {
-    background: $background-base !important;
+    background-color: $background-light !important;
     color: $color-base !important;
 }
 
@@ -111,7 +125,7 @@ treechildren {
 
 /*change color of selected item in Collections pane (My library or folders) */
 #zotero-collections-tree treechildren::-moz-tree-cell(selected) {
-    background: $background-light !important;
+    background-color: $background-lighter !important;
     border: 0 !important;
     border-bottom: 1px solid #1d1d1d !important;
 }
@@ -127,7 +141,7 @@ treechildren {
 #zotero-items-tree {
     border-right: 1px solid #1d1d1d !important;
     border-bottom: 1px solid #1d1d1d !important;
-    background-color: black !important;
+    background-color: $background-medium !important;
 }
 
 /*change background and color of items when hovering*/
@@ -139,13 +153,12 @@ treechildren {
 
 /*change background and color of items when selecting*/
 #zotero-items-tree treechildren::-moz-tree-row(selected) {
-    background: $background-light !important;
-    color: $color-base !important;
     border: 0 !important;
-    border-bottom: 1px solid #1d1d1d !important;
+    border-bottom: 1px solid mediumseagreen !important;
 }
 #zotero-items-tree treechildren::-moz-tree-cell-text(selected) {
     color: $color-base !important;
+    background-color: cadetblue;
     border: 0 !important;
 }
 
@@ -167,7 +180,8 @@ treechildren {
 
 /*Change color of fields in item pane (clicky items) when hovering */
 #zotero-item-pane-content .zotero-clicky:hover {
-    color: black !important;
+    color: $color-base !important;
+    background-color: $background-light;
     border-radius: 0px !important;
 }
 
@@ -181,18 +195,18 @@ treechildren {
 
 /*tabs in Preferences dialog - well more like all the tabs except the ones I'll specify later*/
 tabpanel {
-    color: black !important;
-    background: $background-medium !important;
+    color: $color-base !important;
+    background: $background-base !important;
 }
 
 tab[selected="true"] {
-    color: black !important;
-    background: white !important;
+    color: $color-base !important;
+    background-color: $background-light !important;
 }
 
 tab {
     -moz-appearance: none !important;
-    color: #eee !important;
+    color: $color-base !important;
     background: $background-light !important;
     border-top: 0px solid black !important;
     border-left: 0px solid black !important;
@@ -203,7 +217,7 @@ tab {
 }
 
 tab:hover {
-    color: black !important;
+    color: $color-accent !important;
     background: #e0e8f6 !important;
     box-shadow: inset 0px 0px 0px !important;
     border-radius: 0px 0px 0 0 !important;
@@ -238,17 +252,18 @@ color: $color-base !important; }*/
 
 /*fixed color in drop-down tags in tabpanel: see https://css-tricks.com/solved-with-css-dropdown-menus/*/
 #tags-box-container ul li ul {
-    color: black !important;
+    color: $color-accent !important;
+    background-color: $background-light;
 }
 
 #zotero-item-pane-content tab[selected="true"] {
     background: $background-light !important;
-    border-top: 3px solid #0a84ff !important;
+    border-top: 3px solid mediumseagreen !important;
 }
 
 #zotero-item-pane-content tab {
     -moz-appearance: none !important;
-    color: #eee !important;
+    color: $color-base !important;
     background: $background-base !important;
     border-top: 0px solid #0a84ff !important;
     border-left: 0px solid rgba(127, 127, 127, 0.2) !important;
@@ -275,7 +290,7 @@ color: $color-base !important; }*/
     margin: 1px 5px 0 1px !important;
     max-height: 1.5em !important;
     border: 1px solid transparent;
-    background-color: transparent;
+    background-color: $background-light;
 }
 /*define color of date-field-status*/
 #zotero-date-field-status {
@@ -322,6 +337,6 @@ prefwindow .chromeclass-toolbar {
 
 /*advanced search dialog*/
 #zotero-advanced-search-dialog #zotero-search-box-controls {
-    color: black !important;
+    color: $color-base !important;
     background: $background-medium !important;
 }
